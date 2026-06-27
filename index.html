@@ -2,80 +2,45 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>💌 A Letter For You</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>For My Vanee ❤️</title>
 <style>
-body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:linear-gradient(135deg,#ffd6e7,#ffeef5);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-}
-.envelope{
-    width:320px;
-    height:220px;
-    background:#ff6b9c;
-    border-radius:10px;
-    position:relative;
-    cursor:pointer;
-    box-shadow:0 10px 25px rgba(0,0,0,.2);
-}
-.envelope::before{
-    content:"💌";
-    position:absolute;
-    font-size:60px;
-    left:50%;
-    top:50%;
-    transform:translate(-50%,-50%);
-}
-.letter{
-    display:none;
-    max-width:500px;
-    background:white;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 10px 25px rgba(0,0,0,.2);
-}
-h2{
-    color:#ff4f81;
-}
+body{margin:0;font-family:Georgia,serif;background:linear-gradient(135deg,#ffd6e7,#fff4f8);overflow:hidden;display:flex;justify-content:center;align-items:center;height:100vh}
+#env{width:280px;height:180px;background:#ff5f95;border-radius:12px;color:#fff;display:flex;align-items:center;justify-content:center;text-align:center;font-size:28px;cursor:pointer;box-shadow:0 12px 30px rgba(0,0,0,.25);animation:f 2.5s ease-in-out infinite}
+@keyframes f{50%{transform:translateY(-10px)}}
+#paper{display:none;background:#fff;width:min(92%,650px);padding:28px;border-radius:16px;box-shadow:0 12px 30px rgba(0,0,0,.25);line-height:1.8}
+h1{text-align:center;color:#e91e63}
+.end{text-align:right;color:#e91e63;font-weight:bold}
+.heart{position:fixed;bottom:-30px;animation:r 6s linear forwards}
+@keyframes r{to{transform:translateY(-110vh);opacity:0}}
 </style>
 </head>
 <body>
-
-<div class="envelope" onclick="openLetter()"></div>
-
-<div class="letter" id="letter">
-<h2>❤️ My Dearest ❤️</h2>
-
-<p>
-From the moment you came into my life, everything started feeling a little brighter.
-Your smile brings peace to my heart, and your presence makes ordinary days feel special.
-</p>
-
-<p>
-Thank you for being you. I hope you always stay happy, keep smiling, and never forget how amazing you are.
-No matter where life takes us, you'll always have a special place in my heart.
-</p>
-
-<p>
-Whenever you miss me, just read this letter and remember that someone is always thinking about you. 💖
-</p>
-
-<p style="text-align:right;">
-Forever Yours ❤️
-</p>
+<div id="env">💌<br>Open Me<br>Vanee ❤️</div>
+<div id="paper">
+<h1>To My Vanee❤️</h1>
+<p>I know last chat meri Waja say upset ho Gaye thy. I,m really sorry Vanee. I never wanna hurt you but us time aesa feel ho rha tha may apko force kr rha Hy khud say baat krny Kay leay is leay me chat close KR rha tha. Kaffi upset tha in Dino me but ab SB theek hay. Me nay figure out krlia chezo Ko.</p>
+<p style="text-align:center;font-size:22px;">❤️ Really sorry my LOML 👉🏻👈🏻 ❤️</p>
+<p class="end">Yours,<br>Lewana ❤️</p>
 </div>
-
+<audio id="bgm" loop>
+<source src="Jahaan(256k).mp3" type="audio/mpeg">
+</audio>
 <script>
-function openLetter(){
-document.querySelector(".envelope").style.display="none";
-document.getElementById("letter").style.display="block";
+env.onclick=()=>{
+ env.style.display="none";
+ paper.style.display="block";
+ document.getElementById("bgm").play().catch(()=>{});
+ let t=setInterval(()=>{
+   let h=document.createElement("div");
+   h.className="heart";
+   h.textContent="❤️";
+   h.style.left=Math.random()*100+"vw";
+   h.style.fontSize=(16+Math.random()*20)+"px";
+   document.body.appendChild(h);
+   setTimeout(()=>h.remove(),6000);
+ },300);
 }
 </script>
-
 </body>
 </html>
