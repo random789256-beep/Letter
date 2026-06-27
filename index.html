@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>💌 A Letter For You</title>
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#ffd6e7,#ffeef5);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+.envelope{
+    width:320px;
+    height:220px;
+    background:#ff6b9c;
+    border-radius:10px;
+    position:relative;
+    cursor:pointer;
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+.envelope::before{
+    content:"💌";
+    position:absolute;
+    font-size:60px;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+}
+.letter{
+    display:none;
+    max-width:500px;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+h2{
+    color:#ff4f81;
+}
+</style>
+</head>
+<body>
+
+<div class="envelope" onclick="openLetter()"></div>
+
+<div class="letter" id="letter">
+<h2>❤️ My Dearest ❤️</h2>
+
+<p>
+From the moment you came into my life, everything started feeling a little brighter.
+Your smile brings peace to my heart, and your presence makes ordinary days feel special.
+</p>
+
+<p>
+Thank you for being you. I hope you always stay happy, keep smiling, and never forget how amazing you are.
+No matter where life takes us, you'll always have a special place in my heart.
+</p>
+
+<p>
+Whenever you miss me, just read this letter and remember that someone is always thinking about you. 💖
+</p>
+
+<p style="text-align:right;">
+Forever Yours ❤️
+</p>
+</div>
+
+<script>
+function openLetter(){
+document.querySelector(".envelope").style.display="none";
+document.getElementById("letter").style.display="block";
+}
+</script>
+
+</body>
+</html>
